@@ -1,0 +1,36 @@
+{
+  "name": "birthday",
+  "version": "1.2.0",
+  "description": "Know when a friend's birthday is coming.",
+  "main": "lib/index.js",
+  "bin": {
+    "birthday": "./bin/birthday"
+  },
+  "directories": {
+    "example": "example",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:IonicaBizau/birthday.git"
+  },
+  "keywords": [
+    "birthday"
+  ],
+  "author": "Ionică Bizău <bizauionica@gmail.com> (http://ionicabizau.net)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/IonicaBizau/birthday/issues"
+  },
+  "homepage": "https://github.com/IonicaBizau/birthday",
+  "dependencies": {
+    "bug-killer": "^1.0.0",
+    "clp": "^1.2.0",
+    "couleurs": "^3.0.0",
+    "le-table": "^2.1.0",
+    "ul": "^2.1.0"
+  },
+  "devDependencies": {
+    "mocha": "^2.2.4"
+  }
+}

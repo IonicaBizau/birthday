@@ -1,0 +1,108 @@
+#!/usr/bin/env node
+
+// Dependencies
+var Birthday = require("../lib")
+  , CLP = require("clp")
+  , Package = require("../package")
+  , Logger = require("bug-killer")
+  , Table = require("le-table")
+  ;
+
+// Logger configs
+Logger.config.displayDate = false;
+Logger.config.logLevel = 4;
+
+// Parse the command line arguments
+var nameOpt = new CLP.Option(["n", "name"], "The person name.", "name")
+  , dateOpt = new CLP.Option(["d", "date"], "The person birthday or born date.", "date")
+  , comingOpt = new CLP.Option(["c", "coming"], "Comming birthdays. Pass a date in the future.", "date")
+  , bFileOpt = new CLP.Option(["b", "birthday-path"], "Use a different birthday json file path.", "path")
+  , parser = new CLP({
+        name: "Birthday"
+      , version: Package.version
+      , exe: Package.name
+      , examples: [
+            "birthday -i -n 'Ionică Bizău' -d '14/09/1995'"
+          , "birthday -i -n 'Ionică Bizău' -d '14/09'"
+          , "birthday -c '2015-10-10'"
+          , "birthday # displays all birthdays"
+        ]
+      , docs_url: "https://github.com/IonicaBizau/birthday"
+      , process: true
+    }, [
+        nameOpt, dateOpt, comingOpt, bFileOpt
+    ])
+  ;
+
+// Table defaults
+Table.defaults.marks = {
+    nw: "┌"
+  , n:  "─"
+  , ne: "┐"
+  , e:  "│"
+  , se: "┘"
+  , s:  "─"
+  , sw: "└"
+  , w:  "│"
+  , b: " "
+  , mt: "┬"
+  , ml: "├"
+  , mr: "┤"
+  , mb: "┴"
+  , mm: "┼"
+};
+
+// Insert
+if (nameOpt.is_provided && dateOpt.is_provided) {
+
+    var splits = dateOpt.value.split("/")
+      , data = {
+            name: nameOpt.value
+          , y: null
+          , m: null
+          , d: null
+        }
+      ;
+
+    if (splits.length > 3 || splits.length < 2) {
+        return Logger.log("Date format should be DD/MM/YYYY or DD/MM", "error");
+    } else {
+        data.d = parseInt(splits[0]);
+        data.m = parseInt(splits[1]);
+        if (splits[2]) {
+            data.y = parseInt(splits[2]);
+        }
+    }
+
+    return Birthday.insert(data, function (err) {
+        if (err) {
+            return Logger.log("Date format should be DD/MM/YYYY or DD/MM", "error");
+        }
+        Logger.log("Inserted successfully", "info");
+    });
+}
+
+function list(err, data) {
+    if (err) { return Logger.log(err, "error"); }
+    if (!data.birthdays.length) {
+        return log(null, "No birthdays found.");
+    }
+    var birthdayTable = new Table();
+    birthdayTable.addRow(["#", "Name", "Birthday", "Age"]);
+    data.birthdays.forEach(function (c, i) {
+        birthdayTable.addRow([
+            i + 1
+          , c.name
+          , [c.date.d, c.date.m].join("/")
+          , (c.date.y ? new Date().getFullYear() - c.date.y : "").toString()
+        ]);
+    });
+    console.log(birthdayTable.toString());
+}
+
+if (comingtOpt.value) {
+    return Birthday.next(comingOpt.value, list);
+}
+
+// List the birthdays
+Birthday.getData(list);
