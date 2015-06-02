@@ -94,7 +94,7 @@ function list(err, data) {
             i + 1
           , c.name
           , [c.date.d, c.date.m].join("/")
-          , (c.date.y ? new Date().getFullYear() - c.date.y : "").toString()
+          , (c.date.y ? new Date().getFullYear() - c.date.y : "?").toString()
         ]);
     });
     console.log(birthdayTable.toString());
