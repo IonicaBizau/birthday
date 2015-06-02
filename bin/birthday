@@ -85,7 +85,7 @@ if (nameOpt.is_provided && dateOpt.is_provided) {
 function list(err, data) {
     if (err) { return Logger.log(err, "error"); }
     if (!data.birthdays.length) {
-        return log(null, "No birthdays found.");
+        return Logger.log("No birthdays found.", "error");
     }
     var birthdayTable = new Table();
     birthdayTable.addRow(["#", "Name", "Birthday", "Age"]);
@@ -100,7 +100,7 @@ function list(err, data) {
     console.log(birthdayTable.toString());
 }
 
-if (comingtOpt.value) {
+if (comingOpt.value) {
     return Birthday.next(comingOpt.value, list);
 }
 
