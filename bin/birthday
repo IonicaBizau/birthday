@@ -6,6 +6,7 @@ var Birthday = require("../lib")
   , Package = require("../package")
   , Logger = require("bug-killer")
   , Table = require("le-table")
+  , Moment = require("moment")
   ;
 
 // Logger configs
@@ -88,13 +89,15 @@ function list(err, data) {
         return Logger.log("No birthdays found.", "error");
     }
     var birthdayTable = new Table();
-    birthdayTable.addRow(["#", "Name", "Birthday", "Age"]);
+    birthdayTable.addRow(["#", "Name", "Birthday", "Age", " "]);
+    var fullYear = new Date().getFullYear()
     data.birthdays.forEach(function (c, i) {
         birthdayTable.addRow([
             i + 1
           , c.name
           , [c.date.d, c.date.m].join("/")
-          , (c.date.y ? new Date().getFullYear() - c.date.y : "?").toString()
+          , (c.date.y ? fullYear - c.date.y : "?").toString()
+          , new Moment(new Date(fullYear, c.date.m - 1, c.date.d)).fromNow()
         ]);
     });
     console.log(birthdayTable.toString());
