@@ -77,7 +77,7 @@ if (nameOpt.is_provided && dateOpt.is_provided) {
 
     return Birthday.insert(data, function (err) {
         if (err) {
-            return Logger.log("Date format should be DD/MM/YYYY or DD/MM", "error");
+            return Logger.log(err, "error");
         }
         Logger.log("Inserted successfully", "info");
     });
