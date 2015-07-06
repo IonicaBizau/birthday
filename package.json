@@ -37,6 +37,6 @@
     "w-json": "^1.0.0"
   },
   "scripts": {
-    "test": "./bin/birthday -n 'Barack Obama' -d '4/08/1961'"
+    "test": "./bin/birthday -n 'Barack Obama' -d '4/08/1961';./bin/birthday"
   }
 }
