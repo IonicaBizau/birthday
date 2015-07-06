@@ -7,8 +7,7 @@
     "birthday": "./bin/birthday"
   },
   "directories": {
-    "example": "example",
-    "test": "test"
+    "example": "example"
   },
   "repository": {
     "type": "git",
@@ -23,18 +22,21 @@
     "url": "https://github.com/IonicaBizau/birthday/issues"
   },
   "homepage": "https://github.com/IonicaBizau/birthday",
-  "dependencies": {
-    "bug-killer": "^4.0.0",
-    "clp": "^3.0.0",
-    "couleurs": "^5.0.0",
-    "le-table": "^4.0.0",
-    "ul": "^5.0.0"
-  },
-  "devDependencies": {
-    "mocha": "^2.2.4"
-  },
   "blah": {
-      "h_img": "http://i.imgur.com/8jr9txD.png",
-      "ex_img": "http://i.imgur.com/giMbOtY.png"
+    "h_img": "http://i.imgur.com/8jr9txD.png",
+    "ex_img": "http://i.imgur.com/giMbOtY.png"
+  },
+  "dependencies": {
+    "clp": "^3.0.0",
+    "bug-killer": "^4.0.0",
+    "le-table": "^4.0.0",
+    "moment": "^2.10.3",
+    "r-json": "^1.0.0",
+    "ul": "^5.0.0",
+    "couleurs": "^5.0.0",
+    "w-json": "^1.0.0"
+  },
+  "scripts": {
+    "test": "./bin/birthday -n 'Barack Obama' -d '4/08/1961'"
   }
 }
