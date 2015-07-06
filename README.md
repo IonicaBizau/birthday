@@ -41,7 +41,10 @@ Then, run `birthday --help` and see what the cli tool can do.
 Here is an example how to use this package as library.
 
 ```js
+// Dependencies
 var Birthday = require("birthday");
+
+// Insert a new birthday
 Birthday.insert({
     name: "Ionică Bizău"
   , born: new Date(1995, 9, 14)
