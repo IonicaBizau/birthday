@@ -1,5 +1,5 @@
 var Birthday = require("../lib");
 Birthday.insert({
     name: "Ionică Bizău"
-  , born: new Date(2014, 9, 14)
+  , born: new Date(1995, 9, 14)
 });

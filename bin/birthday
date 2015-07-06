@@ -95,7 +95,7 @@ function list(err, data) {
         birthdayTable.addRow([
             i + 1
           , c.name
-          , [c.date.d, c.date.m].join("/")
+          , new Moment(new Date(fullYear, c.date.m - 1, c.date.d)).format("DD MMMM")
           , (c.date.y ? fullYear - c.date.y : "?").toString()
           , new Moment(new Date(fullYear, c.date.m - 1, c.date.d)).fromNow()
         ]);
