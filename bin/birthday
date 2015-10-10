@@ -6,7 +6,7 @@ var Birthday = require("../lib")
   , Package = require("../package")
   , Logger = require("bug-killer")
   , Table = require("le-table")
-  , Moment = require("moment")
+  , moment = require("moment")
   ;
 
 // Logger configs
@@ -90,14 +90,17 @@ function list(err, data) {
     }
     var birthdayTable = new Table();
     birthdayTable.addRow(["#", "Name", "Birthday", "Age", " "]);
-    var fullYear = new Date().getFullYear()
     data.birthdays.forEach(function (c, i) {
+        var nextBirthday = moment({M: c.date.m - 1, d: c.date.d});
+        if(nextBirthday.isBefore()) { nextBirthday.add(1, 'year') }
+        var dayOfBirth = moment({y: c.date.y, M: c.date.m - 1, d: c.date.d});
+        var today = moment();
         birthdayTable.addRow([
             i + 1
           , c.name
-          , new Moment(new Date(fullYear, c.date.m - 1, c.date.d)).format("DD MMMM")
-          , (c.date.y ? fullYear - c.date.y : "?").toString()
-          , new Moment(new Date(fullYear, c.date.m - 1, c.date.d)).fromNow()
+          , dayOfBirth.format("DD MMMM")
+          , (c.date.y ? today.diff(dayOfBirth, 'years') : "?")
+          , nextBirthday.fromNow()
         ]);
     });
     console.log(birthdayTable.toString());
