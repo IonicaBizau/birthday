@@ -6,7 +6,7 @@ var Birthday = require("../lib")
   , Package = require("../package")
   , Logger = require("bug-killer")
   , Table = require("le-table")
-  , moment = require("moment")
+  , Moment = require("moment")
   ;
 
 // Logger configs
@@ -91,10 +91,10 @@ function list(err, data) {
     var birthdayTable = new Table();
     birthdayTable.addRow(["#", "Name", "Birthday", "Age", " "]);
     data.birthdays.forEach(function (c, i) {
-        var nextBirthday = moment({M: c.date.m - 1, d: c.date.d});
+        var nextBirthday = Moment({M: c.date.m - 1, d: c.date.d});
         if(nextBirthday.isBefore()) { nextBirthday.add(1, 'year') }
-        var dayOfBirth = moment({y: c.date.y, M: c.date.m - 1, d: c.date.d});
-        var today = moment();
+        var dayOfBirth = Moment({y: c.date.y, M: c.date.m - 1, d: c.date.d});
+        var today = Moment();
         birthdayTable.addRow([
             i + 1
           , c.name
