@@ -17,6 +17,9 @@
     "birthday"
   ],
   "author": "Ionică Bizău <bizauionica@gmail.com> (http://ionicabizau.net)",
+  "contributors": [
+    "Thomas Duerr <thomduerr@gmail.com>"
+  ],
   "license": "KINDLY",
   "bugs": {
     "url": "https://github.com/IonicaBizau/birthday/issues"
