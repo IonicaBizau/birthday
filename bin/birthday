@@ -23,8 +23,8 @@ var nameOpt = new CLP.Option(["n", "name"], "The person name.", "name")
       , version: Package.version
       , exe: Package.name
       , examples: [
-            "birthday -i -n 'Ionică Bizău' -d '14/09/1995'"
-          , "birthday -i -n 'Ionică Bizău' -d '14/09'"
+            "birthday -n 'Ionică Bizău' -d '14/09/1995'"
+          , "birthday -n 'Ionică Bizău' -d '14/09'"
           , "birthday -c '2015-10-10'"
           , "birthday # displays all birthdays"
         ]
@@ -91,16 +91,35 @@ function list(err, data) {
     var birthdayTable = new Table();
     birthdayTable.addRow(["#", "Name", "Birthday", "Age", " "]);
     data.birthdays.forEach(function (c, i) {
-        var nextBirthday = Moment({M: c.date.m - 1, d: c.date.d});
-        if(nextBirthday.isBefore()) { nextBirthday.add(1, 'year') }
-        var dayOfBirth = Moment({y: c.date.y, M: c.date.m - 1, d: c.date.d});
-        var today = Moment();
+
+        var birthdayThisYear = Moment({
+                M: c.date.m - 1
+              , d: c.date.d
+              , y: new Date().getFullYear()
+            })
+          , today = Moment()
+          , dayOfBirth = Moment({
+                y: c.date.y
+              , M: c.date.m - 1
+              , d: c.date.d
+            })
+          , ageStr = c.date.y ? today.diff(dayOfBirth, "years") : "?"
+          , nextBirthday = Moment({
+                M: c.date.m - 1
+              , d: c.date.d
+            })
+          ;
+
+        if(!nextBirthday.isBefore() && ageStr !== "?") {
+            ageStr += " → " + (parseInt(ageStr) + 1);
+        }
+
         birthdayTable.addRow([
             i + 1
           , c.name
           , dayOfBirth.format("DD MMMM")
-          , (c.date.y ? today.diff(dayOfBirth, 'years') : "?")
-          , nextBirthday.fromNow()
+          , ageStr
+          , birthdayThisYear.fromNow()
         ]);
     });
     console.log(birthdayTable.toString());
