@@ -1,6 +1,6 @@
 {
   "name": "birthday",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Know when a friend's birthday is coming.",
   "main": "lib/index.js",
   "bin": {
@@ -20,7 +20,7 @@
   "contributors": [
     "Thomas Duerr <thomduerr@gmail.com>"
   ],
-  "license": "KINDLY",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/IonicaBizau/birthday/issues"
   },
