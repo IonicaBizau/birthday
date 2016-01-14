@@ -1,8 +1,8 @@
 [![birthday](http://i.imgur.com/8jr9txD.png)](#)
 
-# `$ birthday` [![Support this project][donate-now]][paypal-donations]
+# `$ birthday` [![PayPal](https://img.shields.io/badge/%24-paypal-f39c12.svg)][paypal-donations] [![Travis](https://img.shields.io/travis/IonicaBizau/birthday.svg)](https://travis-ci.org/IonicaBizau/birthday/) [![Version](https://img.shields.io/npm/v/birthday.svg)](https://www.npmjs.com/package/birthday) [![Downloads](https://img.shields.io/npm/dt/birthday.svg)](https://www.npmjs.com/package/birthday) [![Get help on Codementor](https://cdn.codementor.io/badges/get_help_github.svg)](https://www.codementor.io/johnnyb?utm_source=github&utm_medium=button&utm_term=johnnyb&utm_campaign=github)
 
-Know when a friend's birthday is coming.
+> Know when a friend's birthday is coming.
 
 [![birthday](http://i.imgur.com/giMbOtY.png)](#)
 
