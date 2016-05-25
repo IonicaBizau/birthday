@@ -1,32 +1,38 @@
+
 [![birthday](http://i.imgur.com/8jr9txD.png)](#)
 
-# `$ birthday` [![PayPal](https://img.shields.io/badge/%24-paypal-f39c12.svg)][paypal-donations] [![Travis](https://img.shields.io/travis/IonicaBizau/birthday.svg)](https://travis-ci.org/IonicaBizau/birthday/) [![Version](https://img.shields.io/npm/v/birthday.svg)](https://www.npmjs.com/package/birthday) [![Downloads](https://img.shields.io/npm/dt/birthday.svg)](https://www.npmjs.com/package/birthday) [![Get help on Codementor](https://cdn.codementor.io/badges/get_help_github.svg)](https://www.codementor.io/johnnyb?utm_source=github&utm_medium=button&utm_term=johnnyb&utm_campaign=github)
+# `$ birthday`
+
+ [![PayPal](https://img.shields.io/badge/%24-paypal-f39c12.svg)][paypal-donations] [![AMA](https://img.shields.io/badge/ask%20me-anything-1abc9c.svg)](https://github.com/IonicaBizau/ama) [![Travis](https://img.shields.io/travis/IonicaBizau/birthday.svg)](https://travis-ci.org/IonicaBizau/birthday/) [![Version](https://img.shields.io/npm/v/birthday.svg)](https://www.npmjs.com/package/birthday) [![Downloads](https://img.shields.io/npm/dt/birthday.svg)](https://www.npmjs.com/package/birthday) [![Get help on Codementor](https://cdn.codementor.io/badges/get_help_github.svg)](https://www.codementor.io/johnnyb?utm_source=github&utm_medium=button&utm_term=johnnyb&utm_campaign=github)
 
 > Know when a friend's birthday is coming.
 
 [![birthday](http://i.imgur.com/giMbOtY.png)](#)
 
-## Installation
+## :cloud: Installation
 
 You can install the package globally and use it as command line tool:
+
 
 ```sh
 $ npm i -g birthday
 ```
 
+
 Then, run `birthday --help` and see what the CLI tool can do.
 
-```sh
+
+```
 $ birthday --help
 Usage: birthday [options]
 
 Options:
-  -n, --name <name>           The person name.                             
-  -d, --date <date>           The person birthday or born date.            
+  -n, --name <name>           The person name.
+  -d, --date <date>           The person birthday or born date.
   -c, --coming <date>         Comming birthdays. Pass a date in the future.
-  -b, --birthday-path <path>  Use a different birthday json file path.     
-  -h, --help                  Displays this help.                          
-  -v, --version               Displays version information.                
+  -b, --birthday-path <path>  Use a different birthday json file path.
+  -h, --help                  Displays this help.
+  -v, --version               Displays version information.
 
 Examples:
   birthday -n 'Ionică Bizău' -d '14/09/1995'
@@ -37,13 +43,16 @@ Examples:
 Documentation can be found at https://github.com/IonicaBizau/birthday
 ```
 
-## Example
+## :clipboard: Example
+
 
 Here is an example how to use this package as library. To install it locally, as library, you can do that using `npm`:
 
 ```sh
 $ npm i --save birthday
 ```
+
+
 
 ```js
 // Dependencies
@@ -56,17 +65,15 @@ Birthday.insert({
 });
 ```
 
-## Documentation
+## :memo: Documentation
 
 For full API reference, see the [DOCUMENTATION.md][docs] file.
 
-## How to contribute
+## :yum: How to contribute
 Have an idea? Found a bug? See [how to contribute][contributing].
 
-## Where is this library used?
-If you are using this library in one of your projects, add it in this list. :sparkles:
 
-## License
+## :scroll: License
 
 [MIT][license] © [Ionică Bizău][website]
 
