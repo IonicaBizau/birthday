@@ -1,6 +1,6 @@
 {
   "name": "birthday",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "Know when a friend's birthday is coming.",
   "main": "lib/index.js",
   "bin": {
@@ -41,5 +41,17 @@
   },
   "scripts": {
     "test": "./bin/birthday -n 'Barack Obama' -d '4/08/1961';./bin/birthday"
-  }
+  },
+  "files": [
+    "bin/",
+    "app/",
+    "lib/",
+    "dist/",
+    "src/",
+    "resources/",
+    "menu/",
+    "scripts/",
+    "cli.js",
+    "index.js"
+  ]
 }
