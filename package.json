@@ -1,6 +1,6 @@
 {
   "name": "birthday",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "Know when a friend's birthday is coming.",
   "main": "lib/index.js",
   "bin": {
