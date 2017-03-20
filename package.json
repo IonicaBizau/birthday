@@ -1,6 +1,6 @@
 {
   "name": "birthday",
-  "version": "1.2.4",
+  "version": "1.2.5",
   "description": "Know when a friend's birthday is coming.",
   "main": "lib/index.js",
   "bin": {
@@ -16,7 +16,7 @@
   "keywords": [
     "birthday"
   ],
-  "author": "Ionică Bizău <bizauionica@gmail.com> (http://ionicabizau.net)",
+  "author": "Ionică Bizău <bizauionica@gmail.com> (https://ionicabizau.net)",
   "contributors": [
     "Thomas Duerr <thomduerr@gmail.com>"
   ],
@@ -46,12 +46,11 @@
     "bin/",
     "app/",
     "lib/",
-    "build/",
     "dist/",
     "src/",
+    "scripts/",
     "resources/",
     "menu/",
-    "scripts/",
     "cli.js",
     "index.js"
   ]
