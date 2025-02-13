@@ -1,6 +1,6 @@
 {
   "name": "birthday",
-  "version": "1.2.12",
+  "version": "1.2.13",
   "description": "Know when a friend's birthday is coming.",
   "main": "lib/index.js",
   "bin": {
@@ -53,6 +53,8 @@
     "menu/",
     "cli.js",
     "index.js",
+    "index.d.ts",
+    "package-lock.json",
     "bloggify.js",
     "bloggify.json",
     "bloggify/"
